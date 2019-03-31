@@ -158,7 +158,7 @@
 <main role="main">
 <!-- --------------------------------------------------- O Núcleo --------------------------------------------------------------------------- -->
 
-	<section id="O-Nucleo" class=" container-fluid bg-laranja">
+	<section id="nucleo" class=" container-fluid bg-laranja">
 		<div class="container">
 			<div class="row">
 

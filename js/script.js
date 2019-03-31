@@ -6,7 +6,7 @@ $(document).ready(function () {
 });	
 
 $(document).ready(function () {
-  var $element = $('#O-Nucleo');
+  var $element = $('#nucleo');
   var $follow = $element.find('.title-aside-wrapper');
   var followHeight = $element.find('.title-aside-wrapper').outerHeight();
   var height = $element.outerHeight();
