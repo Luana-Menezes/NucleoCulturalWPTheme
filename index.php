@@ -8,8 +8,9 @@
 		 de propostas em editais e leis de incentivo cultural; captação de recursos; execução dos
 		 projetos; prestação de contas; divulgação de ações culturais; agenciamento de artistas.">
 		<meta name="author" content="Luana Menezes e Luís Fernando">
-		<title>Núcleo Cultural Produções</title>
 
+		<title><?php bloginfo('name');?></title>
+		<!-- Núcleo Cultural Produções -->
 		<link rel="canonical" href="https://nucleocultural.com">
 
 		<!-- 
@@ -34,17 +35,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 	<div class="container">
 
-		<?php the_custom_logo(); ?>
-		<!-- <a class="navbar-brand" href="#">
-			<img id="logo" src="images/logo-horizontal.svg" alt="Núcleo Cultural Logo">
-		</a> -->
+		
+		<a class="navbar-brand" href="<?php bloginfo('url'); ?>"><img id="logo" src="<?php echo get_theme_mod( 'm1_logo' ); ?>" alt="Núcleo Cultural Logo"></a>
+
+		<!-- <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><img id="logo" src="<?php bloginfo('template_directory'); ?>/images/logo-horizontal.svg" alt="Núcleo Cultural Logo"></a> -->
+
+		<!-- <a class="navbar-brand" href="#"><img id="logo" src="images/logo-horizontal.svg" alt="Núcleo Cultural Logo"></a> -->
+
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-		<div class="collapse navbar-collapse " id="navbarResponsive">
+		<?php
+				wp_nav_menu( array(
+					'theme_location'    => 'primary',
+					'depth'             => 1,
+					'container'         => 'div',
+					'container_class'   => 'collapse navbar-collapse',
+					'container_id'      => 'navbarResponsive',
+					'menu_class'        => 'navbar-nav ml-auto text-uppercase justify-content-center',
+					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'            => new WP_Bootstrap_Navwalker(),
+			) );
+		?>
 
-			<!-- <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => 'primary-nav' ) ); ?> -->
+		<!-- <div class="collapse navbar-collapse " id="navbarResponsive">
+
 			<ul class="navbar-nav ml-auto text-uppercase justify-content-center">
 				<li class="nav-item">
 					<a class="nav-link" href="#home">Home
@@ -67,13 +83,14 @@
 					<a class="nav-link" href="#contato">Contato</a>
 				</li>
 			</ul>
-		</div>
+		</div> -->
+
 	</div>
 </nav>
 <!-- ./Navigation -->
 
 <!-- Slider -->
-<header>
+<header id="home">
 	<div id="carousel-header" class="carousel slide" data-ride="carousel-header">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-header" data-slide-to="0" class="active"></li>

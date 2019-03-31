@@ -16,7 +16,15 @@ function load_scripts(){
 
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
+// Brand Image on navbar
+require_once get_template_directory() . '/brand-image.php';
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+register_nav_menus( array(
+	'primary' => __( 'Menu Principal', 'NucleoCulturalWPTheme' ),
+) );
 
 
 
