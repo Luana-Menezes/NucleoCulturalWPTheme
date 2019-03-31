@@ -92,65 +92,98 @@
 <!-- Slider -->
 <header id="home">
 	<div id="carousel-header" class="carousel slide" data-ride="carousel-header">
-		<ol class="carousel-indicators">
+		<!-- <ol class="carousel-indicators">
 			<li data-target="#carousel-header" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-header" data-slide-to="1"></li>
 			<li data-target="#carousel-header" data-slide-to="2"></li>
 			<li data-target="#carousel-header" data-slide-to="3"></li>
 			<li data-target="#carousel-header" data-slide-to="4"></li>
-		</ol>
+		</ol> -->
 		<div class="carousel-inner" role="listbox">
-			<!-- Slide One-->
+
+		<?php 
+		// args
+		$my_args_slider_home = array(
+			'post_type' => 'Slider Home',
+			'posts_per_page' => 5,
+		);
+		// query
+		$my_query_slider_home = new WP_Query ( $my_args_slider_home );
+		?>
+
+		<?php if( $my_query_slider_home->have_posts()) : 
+		$slider_home = $slider_home_array[0];
+		$c = 0;
+		while( $my_query_slider_home->have_posts() ) : 
+		$my_query_slider_home->the_post(); 
+		?>	
+
+		<?php $slider_home_img_url = get_the_post_thumbnail_url(get_the_ID(),'post-thumbnail');?>
+
+		<div class="carousel-item <?php $c++; if($c == 1) { echo ' active'; } ?>" style="background-image: url('<?php echo $slider_home_img_url ?>')">
+
+			<div class="carousel-caption">
+				<h2 class="display-4"><?php the_title(); ?></h2>
+				<p class="lead"><?php the_content(); ?></p>
+			</div>
+		</div>
+
+		<?php endwhile; endif; ?>
+
+		<?php wp_reset_query(); ?>
+
+			<!-- // Slide One
 			<div class="carousel-item active" style="background-image: url('https://source.unsplash.com/1920x1080/?show,event')">
-				<!-- <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?show,event"" alt="Slide One"> -->
+				// <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?show,event"" alt="Slide One">
 				<div class="carousel-caption">
 					<h2 class="display-4">FUTURO</h2>
 					<p class="lead">Invista em arte e tranforme o futuro</p>
 				</div>
 			</div>
-			<!-- Slide Two -->
+			// Slide Two
 			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/1920x1080/?museum,painting')">
-				<!-- <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?museum,painting"" alt="Slide Two"> -->
+				c <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?museum,painting"" alt="Slide Two">
 				<div class="carousel-caption">
 					<h2 class="display-4">FUTURO</h2>
 					<p class="lead">Invista em arte e tranforme o futuro</p>
 				</div>
 			</div>
-			<!-- Slide Three-->
+
+			// Slide Three
 			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/1920x1080/?library,art')">
-				<!-- <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?library,art" alt="Slide Three"> -->
+				// <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?library,art" alt="Slide Three">
 				<div class="carousel-caption">
 					<h2 class="display-4">FUTURO</h2>
 					<p class="lead">Invista em arte e tranforme o futuro.</p>
 				</div>
 			</div>
-			<!-- Slide Four-->
+			// Slide Four
 			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/1920x1080/?singer,band')">
-				<!-- <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?singer,band" alt="Slide Four"> -->
+				// <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?singer,band" alt="Slide Four">
 				<div class="carousel-caption">
 					<h2 class="display-4">FUTURO</h2>
 					<p class="lead">Invista em arte e tranforme o futuro.</p>
 				</div>
 			</div>
-			<!-- Slide Five-->
+			// Slide Five
 			<div class="carousel-item" style="background-image: url('https://source.unsplash.com/1920x1080/?books,magazines')" >
-				<!-- <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?books,magazines" alt="Slide Five"> -->
+				// <img class="d-block w-100" src="https://source.unsplash.com/1920x1080/?books,magazines" alt="Slide Five"> 
 				<div class="carousel-caption">
 					<h2 class="display-4">FUTURO</h2>
 					<p class="lead">Invista em arte e tranforme o futuro.</p>
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 
 		<a class="carousel-control-prev" href="#carousel-header" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Anterior</span>
-				</a>
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Anterior</span>
+		</a>
 		<a class="carousel-control-next" href="#carousel-header" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Próximo</span>
-				</a>
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Próximo</span>
+		</a>
 	</div>
 </header>
 <!-- /.Slider -->
@@ -346,40 +379,64 @@
 				<div class="row">
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
 						<img  class="" src="images/editais-e-leis-de-incentivo.svg" alt="">
+						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-1'); ?></h2>
+						<p><?php echo get_theme_mod('services-item-text-1'); ?></p>
+
+						<!-- <img  class="" src="images/editais-e-leis-de-incentivo.svg" alt="">
 						<h2 class="texto-laranja">Editais e Leis de Incentivo</h2>
-						<p>criamos e/ou formatamos projetos concorrentes a seleções públicas e privadas, via edital ou leis de incentivo à cultura.</p>
+						<p>criamos e/ou formatamos projetos concorrentes a seleções públicas e privadas, via edital ou leis de incentivo à cultura.</p> -->
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
 						<img  class="" src="images/desenvolvimento-de-projetos-culturais.svg" alt="">
+						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-2'); ?></h2>
+						<p><?php echo get_theme_mod('services-item-text-2'); ?></p>
+
+						<!-- <img  class="" src="images/desenvolvimento-de-projetos-culturais.svg" alt="">
 						<h2 class="texto-laranja">Desenvolvimento de Projetos Culturais</h2>
-						<p>executamos projetos de impacto social através da cultura, coordenando todas as fases produtivas (pré-produção, produção e pós-produção).</p>
+						<p>executamos projetos de impacto social através da cultura, coordenando todas as fases produtivas (pré-produção, produção e pós-produção).</p> -->
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
 						<img  class="" src="images/marketing-cultural.svg" alt="">
+						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-3'); ?></h2>
+						<p><?php echo get_theme_mod('services-item-text-3'); ?></p>
+
+						<!-- <img  class="" src="images/marketing-cultural.svg" alt="">
 						<h2 class="texto-laranja">Marketing Cultural</h2>
-						<p>realizamos planejamento de mídia a partir da configuração de cada projeto cultural e dos objetivos específicos do patrocinador.</p>
+						<p>realizamos planejamento de mídia a partir da configuração de cada projeto cultural e dos objetivos específicos do patrocinador.</p> -->
 					</div>
 				</div><!--/.row-->
 
 				<div class="row">
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
 						<img  class="" src="images/gestao-de-responsabilidade-social.svg" alt="">
+						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-4'); ?></h2>
+						<p><?php echo get_theme_mod('services-item-text-4'); ?></p>
+
+						<!-- <img  class="" src="images/gestao-de-responsabilidade-social.svg" alt="">
 						<h2 class="texto-laranja">Gestão de Responsabilidade Social</h2>
-						<p>gerenciamento estratégico do setor, planejando as áreas de atuação e selecionando projetos de acordo com os princípios das organizações parceiras.</p>
+						<p>gerenciamento estratégico do setor, planejando as áreas de atuação e selecionando projetos de acordo com os princípios das organizações parceiras.</p> -->
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
 						<img  class="" src="images/divulgacao-de-eventos-culturais.svg" alt="">
+						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-5'); ?></h2>
+						<p><?php echo get_theme_mod('services-item-text-5'); ?></p>
+
+						<!-- <img  class="" src="images/divulgacao-de-eventos-culturais.svg" alt="">
 						<h2 class="texto-laranja">Divulgação de Eventos Culturais</h2>
-						<p>veiculação por meio de mídias sociais, a fim de promover ações voltadas à cultura.</p>
+						<p>veiculação por meio de mídias sociais, a fim de promover ações voltadas à cultura.</p> -->
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
 						<img  class="rounded-circle" src="images/agenciamento-de-artistas.svg" alt="">
+						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-6'); ?></h2>
+						<p><?php echo get_theme_mod('services-item-text-6'); ?></p>
+
+						<!-- <img  class="rounded-circle" src="images/ agenciamento-de-artistas.svg" alt="">
 						<h2 class="texto-laranja">Agenciamento de Artistas</h2>
-						<p>captação de recursos, elaboração de portfólios e releases, suporte administrativo, divulgação das obras, produção de eventos.</p>
+						<p>captação de recursos, elaboração de portfólios e releases, suporte administrativo, divulgação das obras, produção de eventos.</p> -->
 					</div>
 				</div><!--/.row-->
 			</div><!--/.col-10-->
