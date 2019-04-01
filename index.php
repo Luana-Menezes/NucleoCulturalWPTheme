@@ -378,7 +378,7 @@
 			<div class="col-10 col-lg-10">
 				<div class="row">
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
-						<img  class="" src="images/editais-e-leis-de-incentivo.svg" alt="">
+						<img  class="" src="<?php echo get_theme_mod('services-item-image-1'); ?>" alt="">
 						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-1'); ?></h2>
 						<p><?php echo get_theme_mod('services-item-text-1'); ?></p>
 
@@ -388,7 +388,7 @@
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
-						<img  class="" src="images/desenvolvimento-de-projetos-culturais.svg" alt="">
+						<img  class="" src="<?php echo get_theme_mod('services-item-image-2'); ?>" alt="">
 						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-2'); ?></h2>
 						<p><?php echo get_theme_mod('services-item-text-2'); ?></p>
 
@@ -398,7 +398,7 @@
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
-						<img  class="" src="images/marketing-cultural.svg" alt="">
+						<img  class="" src="<?php echo get_theme_mod('services-item-image-3'); ?>" alt="">
 						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-3'); ?></h2>
 						<p><?php echo get_theme_mod('services-item-text-3'); ?></p>
 
@@ -410,7 +410,7 @@
 
 				<div class="row">
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
-						<img  class="" src="images/gestao-de-responsabilidade-social.svg" alt="">
+						<img  class="" src="<?php echo get_theme_mod('services-item-image-4'); ?>" alt="">
 						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-4'); ?></h2>
 						<p><?php echo get_theme_mod('services-item-text-4'); ?></p>
 
@@ -420,7 +420,7 @@
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
-						<img  class="" src="images/divulgacao-de-eventos-culturais.svg" alt="">
+						<img  class="" src="<?php echo get_theme_mod('services-item-image-5'); ?>" alt="">
 						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-5'); ?></h2>
 						<p><?php echo get_theme_mod('services-item-text-5'); ?></p>
 
@@ -430,7 +430,7 @@
 					</div>
 
 					<div class="col-12 col-lg-4 text-center servicos-item hyphenate">
-						<img  class="rounded-circle" src="images/agenciamento-de-artistas.svg" alt="">
+						<img  class="rounded-circle" src="<?php echo get_theme_mod('services-item-image-6'); ?>" alt="">
 						<h2 class="texto-laranja"><?php echo get_theme_mod('services-item-title-6'); ?></h2>
 						<p><?php echo get_theme_mod('services-item-text-6'); ?></p>
 

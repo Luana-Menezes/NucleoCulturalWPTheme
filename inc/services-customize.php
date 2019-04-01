@@ -7,15 +7,18 @@ function services_customize( $wp_customize ) {
 // --------------------------------------------------
 //  ITEM 1
 // -------------------------------------------------- 
-	// $wp_customize->add_setting( 'services-item-image-1');
 
-	// $wp_customize->add_control( new WP_Customize 'services-item-title-control-1', array(
-	// 	'label'=> 'Serviços Item Título 1',
-	// 	'section'=> 'services-section',
-	// 	'settings'=> 'services-item-title-1'
-	// ) ) );
+	//-----IMAGE-----
 
+	$wp_customize->add_setting( 'services-item-image-1');
 
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services-item-image-control-1', array(
+		'label'=> 'Serviços Item Imagem 1',
+		'section'=> 'services-section',
+		'settings'=> 'services-item-image-1'
+	) ) );
+
+	//-----TITLE-----
 
 	$wp_customize->add_setting( 'services-item-title-1', array(
 		'default'=> 'Editais e Leis de Incentivo'
@@ -26,6 +29,8 @@ function services_customize( $wp_customize ) {
 		'section'=> 'services-section',
 		'settings'=> 'services-item-title-1'
 	) ) );
+
+	//-----TEXT-----
 
 	$wp_customize->add_setting( 'services-item-text-1', array(
 		'default'=> 'criamos e/ou formatamos projetos concorrentes a seleções públicas e privadas, via edital ou leis de incentivo à cultura.'
@@ -41,6 +46,19 @@ function services_customize( $wp_customize ) {
 // --------------------------------------------------
 //  ITEM 2
 // -------------------------------------------------- 
+
+	//-----IMAGE-----
+
+	$wp_customize->add_setting( 'services-item-image-2');
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services-item-image-control-2', array(
+		'label'=> 'Serviços Item Imagem 2',
+		'section'=> 'services-section',
+		'settings'=> 'services-item-image-2'
+	) ) );
+
+	//-----TITLE-----
+
 	$wp_customize->add_setting( 'services-item-title-2', array(
 		'default'=> 'Desenvolvimento de Projetos Culturais'
 	) );
@@ -50,6 +68,8 @@ function services_customize( $wp_customize ) {
 		'section'=> 'services-section',
 		'settings'=> 'services-item-title-2'
 	) ) );
+
+	//-----TEXT-----
 
 	$wp_customize->add_setting( 'services-item-text-2', array(
 		'default'=> 'executamos projetos de impacto social através da cultura, coordenando todas as fases produtivas (pré-produção, produção e pós-produção).'
@@ -65,6 +85,19 @@ function services_customize( $wp_customize ) {
 // --------------------------------------------------
 //  ITEM 3
 // -------------------------------------------------- 
+
+	//-----IMAGE-----
+
+	$wp_customize->add_setting( 'services-item-image-3');
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services-item-image-control-3', array(
+		'label'=> 'Serviços Item Imagem 3',
+		'section'=> 'services-section',
+		'settings'=> 'services-item-image-3'
+	) ) );
+
+	//-----TITLE-----
+
 	$wp_customize->add_setting( 'services-item-title-3', array(
 		'default'=> 'Marketing Cultural'
 	) );
@@ -74,6 +107,8 @@ function services_customize( $wp_customize ) {
 		'section'=> 'services-section',
 		'settings'=> 'services-item-title-3'
 	) ) );
+
+	//-----TEXT-----
 
 	$wp_customize->add_setting( 'services-item-text-3', array(
 		'default'=> 'realizamos planejamento de mídia a partir da configuração de cada projeto cultural e dos objetivos específicos do patrocinador.'
@@ -89,6 +124,19 @@ function services_customize( $wp_customize ) {
 // --------------------------------------------------
 //  ITEM 4
 // -------------------------------------------------- 
+
+	//-----IMAGE-----
+
+	$wp_customize->add_setting( 'services-item-image-4');
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services-item-image-control-4', array(
+		'label'=> 'Serviços Item Imagem 4',
+		'section'=> 'services-section',
+		'settings'=> 'services-item-image-4'
+	) ) );
+
+	//-----TITLE-----
+
 	$wp_customize->add_setting( 'services-item-title-4', array(
 		'default'=> 'Gestão de Responsabilidade Social'
 	) );
@@ -98,6 +146,8 @@ function services_customize( $wp_customize ) {
 		'section'=> 'services-section',
 		'settings'=> 'services-item-title-4'
 	) ) );
+
+	//-----TEXT-----
 
 	$wp_customize->add_setting( 'services-item-text-4', array(
 		'default'=> 'gerenciamento estratégico do setor, planejando as áreas de atuação e selecionando projetos de acordo com os princípios das organizações parceiras.'
@@ -113,6 +163,19 @@ function services_customize( $wp_customize ) {
 // --------------------------------------------------
 //  ITEM 5
 // -------------------------------------------------- 
+
+	//-----IMAGE-----
+
+	$wp_customize->add_setting( 'services-item-image-5');
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services-item-image-control-5', array(
+		'label'=> 'Serviços Item Imagem 5',
+		'section'=> 'services-section',
+		'settings'=> 'services-item-image-5'
+	) ) );
+
+	//-----TITLE-----
+
 	$wp_customize->add_setting( 'services-item-title-5', array(
 		'default'=> 'Divulgação de Eventos Culturais'
 	) );
@@ -122,6 +185,8 @@ function services_customize( $wp_customize ) {
 		'section'=> 'services-section',
 		'settings'=> 'services-item-title-5'
 	) ) );
+
+	//-----TEXT-----
 
 	$wp_customize->add_setting( 'services-item-text-5', array(
 		'default'=> 'veiculação por meio de mídias sociais, a fim de promover ações voltadas à cultura.'
@@ -137,6 +202,19 @@ function services_customize( $wp_customize ) {
 // --------------------------------------------------
 //  ITEM 6
 // --------------------------------------------------
+
+	//-----IMAGE-----
+
+	$wp_customize->add_setting( 'services-item-image-6');
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'services-item-image-control-6', array(
+		'label'=> 'Serviços Item Imagem 6',
+		'section'=> 'services-section',
+		'settings'=> 'services-item-image-6'
+	) ) );
+
+	//-----TITLE-----
+
 	$wp_customize->add_setting( 'services-item-title-6', array(
 		'default'=> 'Agenciamento de Artistas'
 	) );
@@ -146,6 +224,8 @@ function services_customize( $wp_customize ) {
 		'section'=> 'services-section',
 		'settings'=> 'services-item-title-6'
 	) ) );
+
+	//-----TEXT-----
 
 	$wp_customize->add_setting( 'services-item-text-6', array(
 		'default'=> 'captação de recursos, elaboração de portfólios e releases, suporte administrativo, divulgação das obras, produção de eventos.'
@@ -157,9 +237,6 @@ function services_customize( $wp_customize ) {
 		'settings'=> 'services-item-text-6',
 		'type'=> 'textarea'
 	) ) );
-
-
-
 
 }
 add_action( 'customize_register', 'services_customize' );
